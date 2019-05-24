@@ -3,6 +3,16 @@
 ## References  
 [Refs](https://docs.djangoproject.com/ja/2.2/intro/tutorial01/)
 
+- プログラムの流れ
+  1.
+  1.
+  1.
+  1.
+  
+
+-
+
+
 - Beautiful Soup(以下bs4)関数の設計
 
 ```python
