@@ -4,11 +4,24 @@
 [Refs](https://docs.djangoproject.com/ja/2.2/intro/tutorial01/)
 
 - プログラムの流れ
+  1.フォームよりログイン
+    1. SQLよりチームIDに紐づいているデータベースを表示
+  1. フォームより登録
+    1. チームリーダの場合、ID送付
+      - 送付をformに入れてもらったところでデータベース使用可能
+      - 
+  データべース構造
+ ```
+table test(
+id integer primary key,
+team_id integer,
+class integer);
 
 
--
+```
 
 
+  
 - Beautiful Soup(以下bs4)関数の設計
 
 ```python
