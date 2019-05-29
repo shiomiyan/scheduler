@@ -9,6 +9,9 @@ import time
 import re
 import zenhan
 
+def index(request):
+    return render(request, "scheduler/index.html")
+
 #return template
 exportData = {
     "Spring":{
@@ -127,7 +130,9 @@ def exportAsDict(html):
     return dict
 
 #execute function
-def index(request):
-    html = getPageSource("yourid", "yourpassword") #don't commit leave the password
+def execute(request):
+    id = request.POST["id"]
+    pswd = request.POST["pswd"]
+    html = getPageSource(id, pswd) #don't commit leave the password
     dict_data = exportAsDict(html)
     return render(request, "scheduler/index.html", dict_data)
