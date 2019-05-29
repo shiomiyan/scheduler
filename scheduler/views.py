@@ -10,29 +10,11 @@ import re
 import zenhan
 
 def index(request):
+    
     return render(request, "scheduler/index.html")
 
 #return template
-exportData = {
-    "Spring":{
-        "Monday":[],
-        "Tuesday":[],
-        "Wednesday":[],
-        "Thursday":[],
-        "Friday":[],
-        "Saturday":[],
-        "Sunday":[],
-    },
-    "Autumn":{
-        "Monday":[],
-        "Tuesday":[],
-        "Wednesday":[],
-        "Thursday":[],
-        "Friday":[],
-        "Saturday":[],
-        "Sunday":[],
-    }
-}
+
 
 def getTime():
     month = datetime.date.today().month
@@ -74,6 +56,26 @@ def getPageSource(id, pswd):
 
 #receive html source, then fill in the template and return
 def exportAsDict(html):
+    exportData = {
+        "Spring":{
+        "Monday":[],
+        "Tuesday":[],
+        "Wednesday":[],
+        "Thursday":[],
+        "Friday":[],
+        "Saturday":[],
+        "Sunday":[],
+    },
+        "Autumn":{
+        "Monday":[],
+        "Tuesday":[],
+        "Wednesday":[],
+        "Thursday":[],
+        "Friday":[],
+        "Saturday":[],
+        "Sunday":[],
+    }
+    }   
     dict = exportData
     soup = BeautifulSoup(html, "html.parser")
     tables = soup.find_all("table",{"class":"list"})[0]
@@ -133,8 +135,9 @@ def exportAsDict(html):
 
 #execute function
 def execute(request):
-    id = request.POST["id"]
-    pswd = request.POST["pswd"]
-    html = getPageSource(id, pswd) #don't commit leave the password
-    dict_data = exportAsDict(html)
+    if request.method=='POST':
+        id = request.POST["id"]
+        pswd = request.POST["pswd"]
+        html = getPageSource(id, pswd) #don't commit leave the password
+        dict_data = exportAsDict(html)
     return render(request, "scheduler/index.html", dict_data)
