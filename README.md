@@ -3,13 +3,13 @@
 ## References  
 [Refs](https://docs.djangoproject.com/ja/2.2/intro/tutorial01/)
 
-- プログラムの流れ
-  1.フォームよりログイン
-    1. SQLよりチームIDに紐づいているデータベースを表示
+- プログラムの流れ 
+  1.フォームよりログイン 
+    1. SQLよりチームIDに紐づいているデータベースを編集して表示
   1. フォームより登録
     1. チームリーダの場合、ID送付
       - 送付をformに入れてもらったところでデータベース使用可能
-      - 
+  
       
       
 
@@ -19,6 +19,13 @@ table test(
 id integer primary key,
 team_id integer,
 class integer);
+
+外部キー
+↓
+table test2(
+id integer primary key,
+password integer,
+foreign key (id) references test(team_id));
 
 
 ```
