@@ -4,6 +4,7 @@
 [Refs](https://docs.djangoproject.com/ja/2.2/intro/tutorial01/)
 
 - プログラムの流れ 
+
   1.フォームよりログイン 
     1. SQLよりチームIDに紐づいているデータベースを編集して表示
   1. フォームより登録
