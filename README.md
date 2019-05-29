@@ -16,16 +16,16 @@
   データべース構造
  ```
 table test(
-id integer primary key,
+id char primary key,
 team_id integer,
 class integer);
 
 外部キー
 ↓
 table test2(
-id integer primary key,
+team_id char primary key,
 password integer,
-foreign key (id) references test(team_id));
+foreign key (team_id) references test(team_id));
 
 
 ```
