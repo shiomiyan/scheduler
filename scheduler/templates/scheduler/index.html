@@ -3,15 +3,18 @@
 {% block content %}
 <form method="POST" action="scheduler" class="all">
   {% csrf_token %}
-  <div class="login_form">
-    <label class="ef">
-      <input type="text" size="20" name="id" placeholder="Your id">
+  <div class="form-group">
+    <div class="mx-auto" style="width: 200px;">
+    <label>ID
+      <input type="text" size="20" class="form-control" name="id" placeholder="Your id">
     </label>
     <br>
-    <label class="ef">
-      <input type="text" size="20" name="pswd" placeholder="Your password">
+    <label>PASSWORD
+      <input type="text" size="20" class="form-control" name="pswd" placeholder="Your password">
     </label>
-    <br><button type="submit">SUBMIT</button>
+    <br>
+    <button type="submit" class="btn btn-primary">SUBMIT</button>
+    </div>
   </div>
   <div>
     <p>Acquired Data</p>
