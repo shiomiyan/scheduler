@@ -65,7 +65,6 @@ def exportAsDict(html):
         "Sunday":[],
     }
     }
-    dict = exportData
     soup = BeautifulSoup(html, "html.parser")
     tables = soup.find_all("table",{"class":"list"})[0]
     rows = tables.find_all("tr")[0]
@@ -116,6 +115,16 @@ def exportAsDict(html):
                 isClass = 0
                 if classNum != 0:
                     isClass = 1
-                dict[semester][weekTags[set]].append((classNum, isClass, 2))
+                exportData[semester][weekTags[set]].append((classNum, isClass, 2))
             object_counter += 1
-    return dict
+    return exportData
+
+    def makelist():
+        testlist=[]
+        for j in range(0,7):
+            testlist.append(0)
+        return testlist
+
+    def changedata(dict_sample):
+        
+        return 0
