@@ -119,12 +119,26 @@ def exportAsDict(html):
             object_counter += 1
     return exportData
 
-    def makelist():
-        testlist=[]
-        for j in range(0,7):
-            testlist.append(0)
-        return testlist
+def makelist():
+    testlist=[]
+    for j in range(0,7):
+        testlist.append(0)
+    return testlist
 
-    def changedata(dict_sample):
-        
-        return 0
+def changedata(dict_sample):
+    list =["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+    list_class=[]
+    list_class2=[]
+    for k in range(0,7):
+        list_class.append(makelist())
+        list_class2.append(makelist())
+    for t in range(0,7):
+        for i in dict_data[list[t]]:
+            if i !=None:   #授業あり
+                if i[2] != 1:              
+                    list_class[t][i[0]]=1
+                if i[2] != 0:
+                    list_class2[t][i[0]]=1
+                else:
+                    pass    #授業なし
+    return list_class,list_class2
