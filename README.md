@@ -1,41 +1,38 @@
 # univ-scraping-remake
 
-## References  
-[Refs](https://docs.djangoproject.com/ja/2.2/intro/tutorial01/)
+## リファレンス  
+<https://docs.djangoproject.com/ja/2.2/intro/tutorial01/>
 
-- プログラムの流れ 
+## 使い方  
+- 組織の作成
+  1. 登録フォームより任意のIDを登録、作成
+- 組織への参加
+  1. 参加する組織のID、本人の学籍番号、パスワード(ToyoNet-G)を入力  
 
-  1. フォームよりログイン 
-      - SQLよりチームIDに紐づいているデータベースを編集して表示
-  1. フォームより登録
-      - チームリーダの場合、ID送付
-      - 送付をformに入れてもらったところでデータベース使用可能
-  
-      
-      
+## 仕様
 
-  データべース構造
- ```
-table test(
-id char primary key,
+  **データべース構造**
+```
+table test(id char primary key,
 team_id integer,
 class integer);
 
-外部キー
-↓
+# 外部キー
 table test2(
 team_id char primary key,
 password integer,
 foreign key (team_id) references test(team_id));
-
-
 ```
-
-
-  
-- Beautiful Soup(以下bs4)関数の設計
-
-```python
-  clacces1= {"spring1":{"Mondey":[(1,1,1)]}}
-             #春　　　#月　　　#時限　 #あり1なし0 #前期後期判定
+**API設計**
+```
+exportData = {"Spring":
+               {"Monday":
+                 [
+                   (x時限目, 講義の有無, クォーター判定),
+                   (1~6, 0:無 1:有, 0:1Q|3Q 1:2Q|4Q),
+                 ],
+                "Tuesday":...
+               },
+             "Autumn":
+             }
 ```
