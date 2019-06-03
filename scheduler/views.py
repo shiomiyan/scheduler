@@ -33,12 +33,13 @@ def execute(request):
             pre_class=be_rowdata(changedata(dict_data))
             aft_class=be_rowdata(changedata(dict_data))
             database_u = User(student_id = id ,q_pre = pre_class,q_aft = aft_class,name = User_name,team = team_id)
+            database_u
         else:
             """
             dict_data = dict_data['Autumn']
             personal_class=changedata(dict_data)
             database_u = User(student_id = ,q_pre=,q_aft = , name = ,) 
             """
-            return render(request, "scheduler/index.html", dict_data)
+            return render(request, "scheduler/index.html")
  
     return render(request, "scheduler/index.html", dict_data)
