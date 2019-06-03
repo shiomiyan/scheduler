@@ -126,12 +126,15 @@ def makelist():
     return testlist
 
 def changedata(dict_sample):
+    
     list =["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+    
     list_class=[]
     list_class2=[]
-    for k in range(0,7):
+    for k in range(0,6):
         list_class.append(makelist())
         list_class2.append(makelist())
+
     for t in range(0,7):
         for i in dict_data[list[t]]:
             if i !=None:   #授業あり
@@ -142,3 +145,10 @@ def changedata(dict_sample):
                 else:
                     pass    #授業なし
     return list_class,list_class2
+
+def be_rowdata(list_data):
+    tmp_list=[]
+    for i in list_data:
+        for k in i:
+            tmp_list.append(k)
+    return "".join(map(str,tmp_list))
