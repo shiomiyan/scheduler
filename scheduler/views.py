@@ -11,7 +11,7 @@ from scheduler.models import  User,Org
 def index(request):
     #indexを読み込んでデフォルトの画面表示
     #暫定的にtest.htmlを読み込み中↓
-    return render(request, "scheduler/test.html")
+    return render(request, "scheduler/index.html")
 
 #execute function
 def execute(request):
@@ -38,8 +38,8 @@ def execute(request):
             """
             dict_data = dict_data['Autumn']
             personal_class=changedata(dict_data)
-            database_u = User(student_id = ,q_pre=,q_aft = , name = ,) 
+            database_u = User(student_id = ,q_pre=,q_aft = , name = ,)
             """
             return render(request, "scheduler/index.html")
- 
+
     return render(request, "scheduler/index.html", dict_data)
