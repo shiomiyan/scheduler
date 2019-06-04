@@ -11,7 +11,7 @@ from scheduler.models import  User,Org
 def index(request):
     #indexを読み込んでデフォルトの画面表示
     #暫定的にtest.htmlを読み込み中↓
-    return render(request, "scheduler/index.html")
+    return render(request, "scheduler/join_form.html")
 
 #execute function
 def execute(request):
