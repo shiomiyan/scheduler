@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}だんたいとうろくふぉーむ{% endblock title %}
+{% block content %}
+<form method="POST" action="{% url 'scheduler:joinOrg' %}">
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="team_id">Team ID</label>
+    <input type="text" class="form-control" name="team_id" placeholder="Input team id you want to join.">
+  </div>
+  <div>
+    <label for="display_name">表示名</label>
+      <input type="text" size="20" class="form-control" name="display_name" placeholder="display name">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
