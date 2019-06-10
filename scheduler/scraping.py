@@ -119,13 +119,13 @@ def exportAsDict(html):
             object_counter += 1
     return exportData
 
-def makelist():
-    testlist=[]
+def makeList():
+    testlist = []
     for j in range(0,7):
         testlist.append(0)
     return testlist
 
-def changedata(dict_sample):
+def changeData(dict_sample):
     
     list =["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
     
@@ -138,7 +138,7 @@ def changedata(dict_sample):
     for t in range(0,7):
         for i in dict_data[list[t]]:
             if i !=None:   #授業あり
-                if i[2] != 1:              
+                if i[2] != 1:
                     list_class[t][i[0]]=1
                 if i[2] != 0:
                     list_class2[t][i[0]]=1
@@ -146,9 +146,9 @@ def changedata(dict_sample):
                     pass    #授業なし
     return list_class,list_class2
 
-def be_rowdata(list_data):
-    tmp_list=[]
+def beRowData(list_data):
+    tmp_list = []
     for i in list_data:
         for k in i:
             tmp_list.append(k)
-    return "".join(map(str,tmp_list))
+    return "".join(map(str, tmp_list))
