@@ -7,6 +7,6 @@ app_name = "scheduler"
 urlpatterns = [
     path('', views.index, name='index'),
     path('scheduler', views.execute, name="execute"),
-    path("makeorg", views.makeOrg, name="makeOrg"),
-    path("join", views.joinOrg, name="joinOrg")
+    path("makeorg", views.makeorg, name="makeorg"),
+    path("join", views.joinorg, name="joinorg")
 ]
