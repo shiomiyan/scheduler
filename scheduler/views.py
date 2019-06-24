@@ -51,10 +51,12 @@ def makeorg(request):
 
 def joinorg(request):
     if request.method == 'POST':
-        team_id = request.POST["team_id"] # 参加するチームのteam_id
+        if request.filter(Org.objects.get("team_id").exists()):
+            print("ok")
+        #team_id = request.POST["org"] # 参加するチームのteam_id
         display_name = request.POST["display_name"] #チーム内での任意の表示名
 
-        db_usr = User(display_name=display_name)
+        db_usr = User(team_id=team_id, display_name=display_name)
         db_usr.save()
 
     return render(request, "scheduler/join.html")
