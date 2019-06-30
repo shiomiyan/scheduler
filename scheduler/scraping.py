@@ -142,30 +142,29 @@ def exportAsDict(html):
 
 def makeList():
     testlist = []
-    for j in range(0, 7):
+    for j in range(0, 6):
         testlist.append(0)
     return testlist
 
 def changeData(dict_sample):
     list = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
-    
+    print(dict_sample)
     list_class = []
     list_class2 = []
 
-    for k in range(0, 6):
+    for k in range(0, 7):
         list_class.append(makeList())
         list_class2.append(makeList())
-
+    
     for t in range(0, 7):
         for i in dict_sample[list[t]]:
             if i != None: # 授業あり
                 if i[2] != 1:
-                    list_class[t][i[0]] = 1
+                    list_class[t][i[0]-1] = 1
                 if i[2] != 0:
-                    list_class2[t][i[0]] = 1
+                    list_class2[t][i[0]-1] = 1
                 else:
                     pass # 授業なし
-
     return list_class, list_class2
 
 def beRowData(list_data):
