@@ -41,7 +41,7 @@ def makeuser(request):
 def makeorg(request):#チームID作成
     if request.method == 'POST':
         team_id = request.POST["team_id"] # 任意のteam_id
-        db_org = Org(team_id=team_id,)
+        db_org = Org(team_id=team_id,team_pre =None ,team_aft=None)
         db_org.save()
 
     return render(request, "scheduler/makeorg.html")
@@ -51,13 +51,17 @@ def joinorg(request):
     if request.method == 'POST':
         if request.filter(Org.objects.get("team_id").exists()):
             print("ok")
+        id = request.POST["school_number"]
+        model_data=user.objects.get(id)
+        #mode_data.
+        """
         team_id_post = request.POST["org"] # 参加するチームのteam_id
-        team_id_org = Org.objects.get(team_id=team_id_post)
-        school_number =request.POST["school_number"]
-        password    =request.POST["password"]
+        team_id_org = Org.objects.get(team_id=team_id_post)]
 
+        school_number =request.POST["school_number"]
+       
         db_usr = User(team_id=team_id_org,team_pre = 1,team_aft= 1)#Database更新
         db_usr.save()
-
+        """
     return render(request, "scheduler/join.html")
 
